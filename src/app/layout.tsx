@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 
+import { Header } from '@/components/layouts/Header';
 import { cn } from '@/lib/utils';
 import './globals.css';
 
@@ -21,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>{children}</body>
+      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+        <div className="flex min-h-screen flex-col bg-background text-primary">
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
