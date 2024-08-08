@@ -1,0 +1,9 @@
+build
+coverage
+.husky
+.prettierignore
+.eslintignore
+public
+*.xlsx
+node_modules
+.next
