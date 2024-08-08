@@ -1,0 +1,4 @@
+{
+  "*.{ts,js,tsx,jsx}": ["next lint", "prettier --log-level warn --cache --write"],
+  "*.{json,md,scss}": "prettier --log-level warn --cache --write"
+}
