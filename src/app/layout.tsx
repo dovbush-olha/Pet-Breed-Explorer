@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 
 import { Header } from '@/components/layouts/Header';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/classNameUtils';
 import './globals.css';
 
 const fontSans = FontSans({
