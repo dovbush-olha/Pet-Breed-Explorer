@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { Inter as FontSans } from 'next/font/google';
 
 import { Header } from '@/components/layouts/Header';
-import { cn } from '@/lib/classNameUtils';
+import { cn } from '@/lib/utils/classNameUtils';
 
 import './globals.css';
 

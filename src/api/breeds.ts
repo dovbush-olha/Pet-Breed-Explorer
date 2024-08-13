@@ -1,6 +1,6 @@
 import { API_BASE_URL, requestOptions } from '@/api/constants';
 import { Breed } from '@/api/types';
-import { fetchJson } from '@/lib/utils';
+import { fetchJson } from '@/lib/utils/fetchUtils';
 import templateImage from '@/assets/images/cat-dog.jpg';
 
 type BreedApiResponse = {
