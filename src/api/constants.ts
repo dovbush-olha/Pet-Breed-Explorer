@@ -17,3 +17,6 @@ export const requestOptions: RequestInit = {
     'x-api-key': process.env.API_KEY || '',
   },
 };
+
+export const getApi = (breedId: string | number): API_KEY_TYPES =>
+  typeof breedId === 'number' ? API_KEYS.DOGS : API_KEYS.CATS;
