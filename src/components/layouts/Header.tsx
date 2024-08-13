@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b">
+    <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center px-8 md:px-6">
         <Logo />
         <div className="relative max-w-md flex-1">
