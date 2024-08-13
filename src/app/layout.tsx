@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import { ReactNode } from 'react';
 import { Inter as FontSans } from 'next/font/google';
 
 import { Header } from '@/components/layouts/Header';
 import { cn } from '@/lib/classNameUtils';
+
 import './globals.css';
 
 const fontSans = FontSans({
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">

@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { HeroSection } from '@/components/sections/HeroSection';
 import { BreedSection } from '@/components/sections/BreedSection';
 

@@ -1,4 +1,6 @@
-interface DogIconProps extends React.SVGProps<SVGSVGElement> {}
+import React from 'react';
+
+type DogIconProps = React.SVGProps<SVGSVGElement>;
 
 export function DogIcon(props: DogIconProps) {
   return (

@@ -1,9 +1,9 @@
 import { getBreed } from '@/api/breed';
-import { APIS } from '@/api/types';
+import { API_KEY_TYPES } from '@/api/constants';
 
 type BreedProps = {
   params: { breedId: string };
-  searchParams: { api: APIS };
+  searchParams: { api: API_KEY_TYPES };
 };
 
 export default async function Breed({ params, searchParams }: BreedProps) {

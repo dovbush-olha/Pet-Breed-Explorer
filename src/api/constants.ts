@@ -3,6 +3,13 @@ export const API_BASE_URL = {
   DOGS: 'https://api.thedogapi.com',
 };
 
+export const API_KEYS = {
+  CATS: 'CATS',
+  DOGS: 'DOGS',
+} as const;
+
+export type API_KEY_TYPES = (typeof API_KEYS)[keyof typeof API_KEYS];
+
 export const requestOptions: RequestInit = {
   method: 'GET',
   headers: {

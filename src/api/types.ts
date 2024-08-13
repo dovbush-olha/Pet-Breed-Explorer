@@ -1,7 +1,9 @@
+import { StaticImageData } from 'next/image';
+
 export type Breed = {
   id: number | string;
   name: string;
-  image: string;
+  image: string | StaticImageData;
 };
 
 export type BreedDetails = {
@@ -15,8 +17,3 @@ export type BreedDetails = {
   origin: string;
   reference_image_id: string;
 };
-
-export enum APIS {
-  CATS = 'CATS',
-  DOGS = 'DOGS',
-}

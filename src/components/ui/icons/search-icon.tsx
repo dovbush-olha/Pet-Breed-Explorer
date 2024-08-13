@@ -1,4 +1,6 @@
-interface SearchIconProps extends React.SVGProps<SVGSVGElement> {}
+import React from 'react';
+
+type SearchIconProps = React.SVGProps<SVGSVGElement>;
 
 export function SearchIcon(props: SearchIconProps) {
   return (
