@@ -9,6 +9,14 @@ type BreedProps = {
   searchParams: { api: API_KEY_TYPES };
 };
 
+export async function generateMetadata({ params, searchParams }: BreedProps) {
+  const profile = await getBreed(params.breedId, searchParams.api);
+
+  return {
+    title: `${profile.name}’s profile`,
+  };
+}
+
 export default async function Breed({ params, searchParams }: BreedProps) {
   const breedDetails = await getBreed(params.breedId, searchParams.api);
   const excludedBreedDetails = omitProperties(breedDetails, ['name', 'reference_image_id', 'id']);
