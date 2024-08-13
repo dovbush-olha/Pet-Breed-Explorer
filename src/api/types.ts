@@ -7,12 +7,13 @@ export type Breed = {
 };
 
 export type BreedDetails = {
+  id: string | number;
   name: string;
   weight: string;
-  height: string;
   life_span: string;
   bred_for: string;
   temperament: string;
   origin: string;
   reference_image_id: string;
+  breed_group: string;
 };

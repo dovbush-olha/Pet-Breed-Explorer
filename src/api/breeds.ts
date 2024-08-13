@@ -2,6 +2,7 @@ import { API_BASE_URL, requestOptions } from '@/api/constants';
 import { Breed } from '@/api/types';
 import { fetchJson } from '@/lib/utils/fetchUtils';
 import templateImage from '@/assets/images/cat-dog.jpg';
+import { fetchImage } from '@/api/images';
 
 type BreedApiResponse = {
   id: string;
@@ -12,11 +13,6 @@ type BreedApiResponse = {
   };
 };
 export const breedsEndpoint = '/v1/breeds?limit=10';
-
-async function fetchImage(imageId: string): Promise<string> {
-  const data = await fetchJson<{ url: string }>(`${API_BASE_URL.CATS}/v1/images/${imageId}`, requestOptions);
-  return data.url;
-}
 
 export async function fetchBreeds(url: string, isCatAPI: boolean = false): Promise<Breed[]> {
   const data = await fetchJson<BreedApiResponse[]>(url, requestOptions);

@@ -3,13 +3,10 @@ import Link from 'next/link';
 
 import { getBreeds } from '@/api/breeds';
 import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card';
-import { API_KEY_TYPES, API_KEYS } from '@/api/constants';
+import { getApi } from '@/api/constants';
 
 export async function BreedSection() {
   const breeds = await getBreeds();
-
-  const getApi = (breedId: string | number): API_KEY_TYPES =>
-    typeof breedId === 'number' ? API_KEYS.DOGS : API_KEYS.CATS;
 
   return (
     <div className="container">
