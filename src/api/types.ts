@@ -12,7 +12,6 @@ export type BreedDetails = {
   height: string;
   life_span: string;
   bred_for: string;
-  breed_group: string;
   temperament: string;
   origin: string;
   reference_image_id: string;

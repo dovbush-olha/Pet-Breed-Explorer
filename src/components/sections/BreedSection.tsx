@@ -18,7 +18,7 @@ export async function BreedSection() {
           <Link
             key={breed.id}
             href={{
-              pathname: `/${breed.id}`,
+              pathname: `/breeds/${breed.id}`,
               query: { api: getApi(breed.id) },
             }}
           >
