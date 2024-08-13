@@ -3,6 +3,14 @@ import { Breed } from '@/api/types';
 import { fetchJson } from '@/lib/utils';
 import templateImage from '@/assets/images/cat-dog.jpg';
 
+type BreedApiResponse = {
+  id: string;
+  name: string;
+  reference_image_id?: string;
+  image?: {
+    url: string;
+  };
+};
 export const breedsEndpoint = '/v1/breeds?limit=10';
 
 async function fetchImage(imageId: string): Promise<string> {
@@ -11,10 +19,10 @@ async function fetchImage(imageId: string): Promise<string> {
 }
 
 export async function fetchBreeds(url: string, isCatAPI: boolean = false): Promise<Breed[]> {
-  const data = await fetchJson<any[]>(url, requestOptions);
+  const data = await fetchJson<BreedApiResponse[]>(url, requestOptions);
 
   const breeds: Breed[] = await Promise.all(
-    data.map(async (breed: any) => {
+    data.map(async (breed) => {
       let imageUrl = breed.image?.url;
 
       if (isCatAPI && breed.reference_image_id) {

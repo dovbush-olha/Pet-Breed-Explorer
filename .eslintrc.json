@@ -1,5 +1,12 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "import/order": [
       "error",
@@ -8,6 +15,8 @@
         "pathGroupsExcludedImportTypes": ["internal", "react"],
         "newlines-between": "always"
       }
-    ]
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   }
 }

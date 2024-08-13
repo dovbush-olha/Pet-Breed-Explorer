@@ -1,9 +1,27 @@
 import { fetchJson } from '@/lib/utils';
-import { APIS, BreedDetails } from '@/api/types';
-import { API_BASE_URL, requestOptions } from '@/api/constants';
+import { BreedDetails } from '@/api/types';
+import { API_BASE_URL, API_KEY_TYPES, requestOptions } from '@/api/constants';
 
-export async function getBreed(breedId: string, api: APIS): Promise<BreedDetails> {
-  const data = await fetchJson<any>(`${API_BASE_URL[api]}/v1/breeds/${breedId}`, requestOptions);
+type BreedDetailsResponse = {
+  weight: {
+    imperial: string;
+    metric: string;
+  };
+  height: {
+    imperial: string;
+    metric: string;
+  };
+  life_span: string;
+  bred_for: string;
+  breed_group: string;
+  temperament: string;
+  origin: string;
+  reference_image_id: string;
+  name: string;
+};
+
+export async function getBreed(breedId: string, api: API_KEY_TYPES): Promise<BreedDetails> {
+  const data = await fetchJson<BreedDetailsResponse>(`${API_BASE_URL[api]}/v1/breeds/${breedId}`, requestOptions);
 
   const result: BreedDetails = {
     weight: data.weight.metric,
@@ -16,5 +34,6 @@ export async function getBreed(breedId: string, api: APIS): Promise<BreedDetails
     reference_image_id: data.reference_image_id,
     name: data.name,
   };
+
   return result;
 }
