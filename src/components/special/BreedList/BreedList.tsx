@@ -5,7 +5,7 @@ import { getBreeds } from '@/api/breeds';
 import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card';
 import { getApi } from '@/api/constants';
 
-export async function BreedSection() {
+export async function BreedList() {
   const breeds = await getBreeds();
 
   return (

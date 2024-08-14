@@ -17,6 +17,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
+        loading: ['var(--font-loading)'],
       },
       colors: {
         border: 'hsl(var(--border))',

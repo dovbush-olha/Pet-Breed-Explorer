@@ -1,4 +1,4 @@
-export function HeroSection() {
+export function Hero() {
   return (
     <div className="container px-8 py-24 md:px-6">
       <div className="mx-auto max-w-3xl space-y-6 text-center">

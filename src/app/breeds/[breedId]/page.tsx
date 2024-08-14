@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { getBreed } from '@/api/breed';
 import { API_KEY_TYPES } from '@/api/constants';
 import { formatBackendString } from '@/lib/utils/stringUtils';
@@ -34,6 +36,7 @@ export default async function Breed({ params, searchParams }: BreedProps) {
           ) : null;
         })}
       </div>
+
       <BreedGallery
         breedId={breedDetails.id}
         imageId={breedDetails.reference_image_id}

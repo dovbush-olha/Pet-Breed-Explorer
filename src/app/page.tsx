@@ -1,11 +1,16 @@
-import { HeroSection } from '@/components/sections/HeroSection';
-import { BreedSection } from '@/components/sections/BreedSection';
+import React from 'react';
+
+import { Hero } from '@/components/special/Hero';
+import { BreedList } from '@/components/special/BreedList/BreedList';
+import { BreedListLoading } from '@/components/special/BreedList/BreedListLoading';
 
 export default function Home() {
   return (
     <main className="flex-1 bg-accent">
-      <HeroSection />
-      <BreedSection />
+      <Hero />
+      <React.Suspense fallback={<BreedListLoading />}>
+        <BreedList />
+      </React.Suspense>
     </main>
   );
 }
