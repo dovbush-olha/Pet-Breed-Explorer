@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
-import { Inter as FontSans } from 'next/font/google';
+import { Inter as FontSans, Redacted_Script as LoadingFont } from 'next/font/google';
 
 import { Header } from '@/components/layouts/Header';
 import { cn } from '@/lib/utils/classNameUtils';
@@ -10,6 +10,13 @@ import './globals.css';
 const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
+});
+
+const loadingFont = LoadingFont({
+  weight: ['400'],
+  subsets: ['latin'],
+  display: 'block',
+  variable: '--font-loading',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable, loadingFont.variable)}>
         <div className="flex min-h-screen flex-col bg-background text-primary">
           <Header />
           {children}
