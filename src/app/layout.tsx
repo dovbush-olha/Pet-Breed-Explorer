@@ -13,7 +13,7 @@ const fontSans = FontSans({
 });
 
 const loadingFont = LoadingFont({
-  weight: ['400'],
+  weight: ['400', '700'],
   subsets: ['latin'],
   display: 'block',
   variable: '--font-loading',
