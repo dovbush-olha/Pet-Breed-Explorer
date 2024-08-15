@@ -5,7 +5,7 @@ import { DogIcon } from '@/components/ui/icons/dog-icon';
 export function Logo() {
   return (
     <Link
-      href="#"
+      href="/"
       className="mr-6 flex items-center gap-2"
       prefetch={false}
     >
